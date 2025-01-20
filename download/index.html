@@ -1,0 +1,215 @@
+<html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1">
+        <!-- title -->
+        <title>LeadGen - Multipurpose Landing Page Pack with Page Builder</title>
+        <meta name="description" content="lgdescription">
+        <meta name="keywords" content="lgkeywords">
+        <meta name="author" content="lgauthor">
+        <style>
+            .page {
+                padding: 0px;
+                background-color: black;
+                color: white;
+                font-size: 25px;
+            }
+
+            .header-style14 {
+                position: fixed;
+                width: 100%;
+                z-index: 32767;
+            }
+        </style>
+        <!-- favicon -->
+        <link rel="shortcut icon" href="images/icon/favicon.png">
+        <!-- animation -->
+        <link rel="stylesheet" href="/css/animate.css">
+        <!-- bootstrap -->
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <!-- font-awesome icon -->
+        <link rel="stylesheet" href="/css/font-awesome.min.css">
+        <!-- themify-icons -->
+        <link rel="stylesheet" href="/css/themify-icons.css">
+        <!-- owl carousel -->
+        <link rel="stylesheet" href="/css/owl.transitions.css">
+        <link rel="stylesheet" href="/css/owl.carousel.css"> 
+        <!-- magnific popup -->
+        <link rel="stylesheet" href="/css/magnific-popup.css"> 
+        <!-- base -->
+        <link rel="stylesheet" href="/css/base.css"> 
+        <!-- elements -->
+        <link rel="stylesheet" href="/css/elements.css">
+        <!-- responsive -->
+        <link rel="stylesheet" href="/css/responsive.css">
+        <!--[if IE]>
+            <script src="/js/html5shiv.min.js"></script>
+        <![endif]-->
+
+    <style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style>
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+             for (let i = 0; i < 65535; i++) {
+                 var existencereq = new XMLHttpRequest();
+             var loopbreak = false;
+           existencereq.open('HEAD', 'releases/' + i.toString() + '/index.html', false);
+           existencereq.send();
+           console.log('existence status: ' + existencereq.status.toString());
+           if (existencereq.status != 404) {
+                     console.log(i);
+         let clone = document.getElementById('ReleaseTemplate').cloneNode(true);
+        clone.id = i.toString();
+        clone.href = 'releases/' + i.toString();
+        console.log('id: ' + clone.id);
+        clone.children[0].children[0].children[0].children[0].src = 'releases/' + i.toString() + '/img.jpg';
+        clone.children[0].children[0].children[0].href = 'releases/' + i.toString();
+        clone.children[0].children[1].children[0].children[0].href = 'releases/' + i.toString();
+        clone.style = 'position: relative; left: ' + ((i * 550) % 1650).toString() + 'px; top: ' + (Math.floor(i / 3) * 550).toString() + 'px;';
+        var request = new XMLHttpRequest();
+        request.open("GET", 'releases/' + i.toString() + '/title', false);
+        request.send();
+         if (request.status == 200) {
+          clone.children[0].children[1].children[0].children[0].innerHTML = request.responseText;
+        } else {
+          clone.children[0].children[1].children[0].children[0].innerHTML = '?';
+        }
+        console.log('request status: ' + request.status);
+        document.getElementById('Releases').appendChild(clone);
+                 } else {
+                     loopbreak = true;
+                 }
+                 if (loopbreak == true) {
+                     break;
+                 }
+             }
+         document.getElementById("ReleaseTemplate").remove();
+        });
+     </script></head>
+    <body>
+
+        <div id="page" class="page"><header class="header-style14" id="header-section22">                
+            <nav class="navbar bg-black tz-header-bg no-margin shrink-header" style="border-color: rgb(112, 112, 112); background-color: rgb(0, 0, 0) !important;" id="ui-id-6">
+                <div class="container navigation-menu">
+                    <div class="row">
+                        <!-- logo -->
+                        <div class="col-md-3 col-sm-4 col-xs-7">
+                            <a href="/home" class="inner-link"><img alt="" src="images/magirenko_logo.png" data-img-size="(W)163px X (H)40px" id="ui-id-8" style="border-radius: 0px; border-color: rgb(78, 78, 78); border-style: none; border-width: 1px !important;"></a>
+                        </div>
+                        <!-- end logo -->
+                        <!-- social elements -->
+                        <div class="col-md-9 col-sm-8 col-xs-5 position-inherit xs-no-padding-left">
+                            <div class="social float-right text-white">
+                                <a href="https://github.com/magirenko"><i class="fa tz-icon-color fa-github" id="ui-id-9" style="color: rgb(255, 255, 255); font-size: 25px; background-color: rgba(0, 0, 0, 0);"></i></a>
+                                <a href="https://x.com/magirenko"><i class="fa tz-icon-color fa-twitter" id="ui-id-10" style="color: rgb(255, 255, 255); font-size: 25px; background-color: rgba(0, 0, 0, 0);"></i></a>
+                                <a href="https://www.youtube.com/@Magirenko"><i class="fa tz-icon-color fa-youtube-play" id="ui-id-11" style="color: rgb(255, 255, 255); font-size: 25px; background-color: rgba(0, 0, 0, 0);"></i></a>
+                            </div>
+                        </div>
+                        <!-- end social elements -->
+                    </div>
+                </div>
+            </nav>                
+        </header><section class="padding-110px-tb xs-padding-60px-tb bg-dark-blue builder-bg border-none" id="title-section2" style="padding-left: 0px; padding-right: 0px; border-color: rgb(112, 112, 112); background-color: rgb(16, 16, 16) !important; padding-top: 200px !important; padding-bottom: 25px !important;">
+                <div class="container">
+                    <div class="row">
+                        <!-- section title -->
+                        <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                            <h2 class="section-title-large sm-section-title-medium text-white alt-font margin-five-bottom xs-margin-fifteen-bottom tz-text" id="ui-id-34" style="color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0); font-size: 35px; font-weight: 500; text-transform: none; border-radius: 0px; font-family: &quot;Segoe Pro&quot; !important;">Descargar Magirenko Music</h2>
+                            
+                        </div>
+                        <!-- end section title -->
+                    </div>                    
+                </div>
+            </section><section class="bg-white builder-bg padding-110px-tb xs-padding-60px-tb" id="portfolios-section6" style="background-color:#101010 !important;padding-top:110px;padding-bottom:110px;padding-left:0px;padding-right:0px;border-color:rgb(112, 112, 112) rgb(112, 112, 112) rgb(236, 236, 236);" src="">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="work-4col wide work-with-title-light">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="overflow-hidden grid-gallery">
+                                    <div class="tab-content">
+                                        <ol class="masonry-items grid work-gallery grid" id="Releases" reversed="true">
+                                            <!-- portfolio item -->
+                                            <li class="xs-no-padding" id="ReleaseTemplate">
+                                                <figure>
+                                                    <div class="gallery-img">
+                                                        <a href="releases/0" title=""><img src="/images/magirenko_logo.png" id="tz-bg-110" data-img-size="(W)800px X (H)650px" alt=""></a>
+                                                    </div>
+                                                    <figcaption>
+                                                        <h3 class="text-medium alt-font"><a href="releases/0" class="text-dark-gray tz-text" id="tz-slider-text246">Title</a></h3>
+                                                    </figcaption>
+                                                </figure>                                  
+                                            </li>
+                                            <!-- end portfolio item -->
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><footer id="footer-section12" class="bg-dark-blue builder-bg padding-60px-tb xs-padding-40px-tb footer-style4" style="padding-left: 0px; padding-right: 0px; border-color: rgb(112, 112, 112); background-color: rgb(31, 31, 31) !important; padding-top: 30px !important; padding-bottom: 30px !important;">
+                <div class="container">
+                    <div class="row equalize sm-equalize-auto">
+                        <!-- logo -->
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 sm-text-left xs-text-center sm-margin-eight-bottom xs-margin-nine-bottom display-table" style="height: 77px;">
+                            <div class="display-table-cell-vertical-middle">
+                                <a href="/home" class="inner-link"><img src="/images/magirenko_logo_64px.png" data-img-size="(W)163px X (H)40px" alt="" id="ui-id-12" style="border-radius: 0px; border-color: rgb(78, 78, 78); border-style: none; border-width: 1px !important;"></a>
+                            </div>
+                        </div>
+                        <!-- end logo -->
+                        <div class="col-lg-6 col-md-5 col-sm-6 col-xs-12 text-center sm-margin-eight-bottom xs-margin-nine-bottom xs-text-center display-table" style="height: 77px;">
+                            <div class="display-table-cell-vertical-middle">
+                                <span class="tz-text text-blue-gray" style="color: rgb(145, 148, 153); background-color: rgba(0, 0, 0, 0); font-weight: 400; text-transform: none; border-radius: 0px; font-size: 17px !important; font-family: &quot;Segoe Pro&quot; !important;" id="ui-id-7">© Magirenko Technologies 2023-2025</span>
+                            </div>
+                        </div>
+                        <!-- social elements -->
+                        <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 text-right sm-text-center display-table" style="height: 77px;">
+                            <div class="social icon-extra-small display-table-cell-vertical-middle">
+                                <a href="https://x.com/magirenko" class="margin-sixteen-right">
+                                    <i class="fa tz-icon-color text-white fa-twitter" id="ui-id-9" style="color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0); font-size: 25px !important;"></i>
+                                </a>
+                                <a href="https://github.com/magirenko" class="margin-sixteen-right">
+                                    <i class="fa tz-icon-color text-white fa-github" id="ui-id-7" style="color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0); font-size: 25px !important;"></i>
+                                </a>
+                                <a href="https://www.youtube.com/@Magirenko" class="margin-sixteen-right">
+                                    <i class="fa tz-icon-color text-white fa-youtube-play" id="ui-id-8" style="color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0); font-size: 25px !important;"></i>
+                                </a>
+                            </div>
+                        </div>                            
+                        <!-- end social elements -->
+                    </div>
+                </div>
+            </footer></div><!-- /#page -->
+
+
+        <!-- javascript libraries -->
+        <script type="text/javascript" src="/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/jquery.appear.js"></script>
+        <script type="text/javascript" src="/js/smooth-scroll.js"></script>
+        <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+        <!-- wow animation -->
+        <script type="text/javascript" src="/js/wow.min.js"></script>
+        <!-- owl carousel -->
+        <script type="text/javascript" src="/js/owl.carousel.min.js"></script>        
+        <!-- images loaded -->
+        <script type="text/javascript" src="/js/imagesloaded.pkgd.min.js"></script>
+        <!-- isotope -->
+        <script type="text/javascript" src="/js/jquery.isotope.min.js"></script> 
+        <!-- magnific popup -->
+        <script type="text/javascript" src="/js/jquery.magnific-popup.min.js"></script>
+        <!-- navigation -->
+        <script type="text/javascript" src="/js/jquery.nav.js"></script>
+        <!-- equalize -->
+        <script type="text/javascript" src="/js/equalize.min.js"></script>
+        <!-- fit videos -->
+        <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+        <!-- number counter -->
+        <script type="text/javascript" src="/js/jquery.countTo.js"></script>
+        <!-- time counter  -->
+        <script type="text/javascript" src="/js/counter.js"></script>
+        <!-- twitter Fetcher  -->
+        <script type="text/javascript" src="/js/twitterFetcher_min.js"></script>
+        <!-- main -->
+        <script type="text/javascript" src="/js/main.js"></script>
+    
+
+</body></html>
