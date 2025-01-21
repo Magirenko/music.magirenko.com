@@ -1,9 +1,21 @@
-Este es la primera version de MagicM Music! no tiene Lista de cambios, pero se mostrara lo que tiene en esta version:<br>
-- Pantalla de bienvenida<br>
-- Lista de Musicas<br>
-- Sistema de reproduccion de musicas<br>
-- Minireproductor de Musica con boton de pausa, titulo, bucle y duracion<br>
-- Viene en zip, rar y 7z<br>
-- para ordenadores de 32 bits+ (x86)<br>
+# Magirenko Music v0.2
 <br>
-Nota: se recomienda descargar los archivos puestos en vez del codigo fuente, Los archivos colocados tienen cosas que faltan en el codigo fuente.
+## Que hay de nuevo en la version v0.2:<br>
+<br>
+### Adiciones<br>
+ - Ahora puedes abrir Archivos de audio con Magirenko Music<br>
+ - Changelogs de lo nuevo en la pantalla de bienvenida<br>
+	### Cambios<br>
+ - Se quitaron todas las referencias de "MagicM Music" en el codigo fuente (puede ser que haya mas)<br>
+ - Las optimizaciones de compilacion de .NET se cambio a release, esto es por que pesaba mas.<br>
+ - Se arreglo el error tipografico en el texto de la version de la pantalla de bienvenida "magicrenko"<br>
+ - Se arreglaron los metadatos del Ejecutable<br>
+ - Se quito la posibilidad de Cambiar el tamaño de la ventana y maximizarlo.<br>
+	### Arreglo de Bugs<br>
+ - Se arreglo el bug que el bucle no funcionaba.<br>
+ - Se arreglo la "g" un poco recortada en el texto de la version (no tan notable)<br>
+<br>
+## Cambios de github<br>
+- Magirenko Music ahora es open source! (hasta las betas)<br>
+- Se puso el codigo fuente en vez del software compilado.<br>
+- el codigo fuente tiene un compilador de batch y lua integrado.
