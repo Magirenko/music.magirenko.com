@@ -1,9 +1,9 @@
-Este es la primera version de MagicM Music! no tiene Lista de cambios, pero se mostrara lo que tiene en esta version:<br>
-- Pantalla de bienvenida<br>
-- Lista de Musicas<br>
-- Sistema de reproduccion de musicas<br>
-- Minireproductor de Musica con boton de pausa, titulo, bucle y duracion<br>
-- Viene en zip, rar y 7z<br>
-- para ordenadores de 32 bits+ (x86)<br>
+Salio una nueva actualizacion de Magirenko Music!
+<b>Solucion de bugs</b><br>
+ - Se arreglo el bug de Magirenko Music crasheando cuando se cerraba y si habia una playlist abierta no se eliminaban los temporales, esto pasaba desde la version v0.1 y Magirenko no se dio cuenta<br>
+ - Se arreglo el bug donde cuando se abre una playlist desde la extension de archivo aparecian todas las pantallas abiertas.<br>
 <br>
-Nota: se recomienda descargar los archivos puestos en vez del codigo fuente, Los archivos colocados tienen cosas que faltan en el codigo fuente.
+La version v0.4 ha salido mal y tenia estos 2 bugs, y el primer bug fue uno grave para la v0.4, se acumulaban los temporales y ocupaba mucho espacio.<br>
+<br>
+Nuestras disculpas por no haber testeado bien Magirenko Music v0.4, a partir de ahora vamos a testear bien Magirenko Music antes de publicarlo, Esto no volvera a ocurrir<br>
+- Sinceramente, Magirenko Technologies.
