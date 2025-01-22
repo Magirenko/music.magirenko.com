@@ -1,0 +1,214 @@
+<html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1">
+        <!-- title -->
+        <title>Descargar Magirenko Music v0.4</title>
+        <meta name="description" content='<b>Salio una nueva actualizacion de Magirenko Music!</b>
+<b>Actualizacion Grande</b><br>
+<br>
+<b>Adiciones</b><br>
+ - Una de las actualizaciones mas esperadas: Playlists!<br>
+    - Puedes crear playlists en el menu de archivo > playlists > nueva playlist<br>
+	- Puedes abrir playlists en el menu de archivo > playlists > abrir playlist<br>
+	- Puedes importar una playlist a la carpeta de musics en el menu de archivo > playlists > importar playlists.<br>
+	- Ahora hay un nuevo formato y extension de archivo para las playlists! (una de las cosas mas impresionantes que Magirenko ha hecho)<br>
+	- Las playlists tienen un titulo, autor y descripcion.<br>
+	- Puedes abrir un archivo .MMPL con Magirenko Music v0.4 para abrirlo desde la extension.<br>
+	- Hay 2 ventanas nuevas de la creacion de playlist y informacion de una playlist.<br>
+	- Libreria de clases de WPF para manipular playlists, se puede encontrar en los binarios de Magirenko Music v0.4.<br>
+ - adelantamiento de tiempo de musica<br>
+    - Arrastra la linea de tiempo de la musica para cambiar su posicion.<br>
+	- Puedes presionar las teclas de las flechas izquierda y derecha para adelantar o atrasar la posicion de la musica.<br>
+ - Menu de archivo<br>
+    - ahora existe un menu de archivo para hacer varias acciones:<br>
+	  - Abrir musicas<br>
+	  - Importar musicas<br>
+	  - Abrir playlists<br>
+	  - Importar playlists<br>
+	  - Crear Playlists<br>
+ - Se añadio mas manejo de errores (los mensajes que aparecen cuando hay un error desconocido)<br>
+ - Se añadio un boton para cambiar la vista de Musicas o playlists<br>
+ - Se añadio un boton de recargar las listas.<br>
+<br>
+<b>Cambios</b><br>
+ - Se cambio la linea de tiempo de la reproduccion de musica para que se pueda cambiar la posicion<br>
+ - Ya no hay redirecciones de url en la lista de cambios por la deteccion de antivirus<br>
+ - ahora el nombre del ejecutable y del DLL se llaman "magirenko_music"<br>
+ - ahora en el texto de la version aparece la etapa de Magirenko Music (alfa)<br>
+ - Se eliminaron mas referencias de MagicM en el codigo fuente.<br>
+<br>
+<b>Arreglo de bugs</b><br>
+ - Se arreglo el bug que cuando se abre un archivo con formato o extension incompatible, Magirenko Music sigue abierto y se reproduce una musica desconocida.<br>
+<br>
+<b>Hay bugs graves en Magirenko Music v0.4.</b><br>
+ - cuando se abre una playlist desde el explorador de archivos, aparecen todas las pantallas de una.<br>
+ - desde la version v0.1 Magirenko Music crasheaba cuando se cierra, esto no se ha notado, ya que la version v0.4 carga temporales de las playlists y se supone que lo elimina cuando se cierra, ya no puede detectar que la aplicacion se cerro por que se cierra con bugs, entonces se acumulan los archivos temporales sin limpiar (tienen los tamaños de los tamaños de las musicas de las playlists), le recomendamos que no cierre Magirenko Music cuando una playlist esta abierta<br>
+ - Vamos a solucionar estos dos bugs lo mas rapido que podamos, nos disculpamos por las molestias.'>
+        <meta name="keywords" content="Magirenko Music, software, reproductor de musica">
+        <meta name="author" content="Magirenko">
+        <style>
+            .page {
+                padding: 0px;
+                background-color: black;
+                color: white;
+                font-size: 25px;
+            }
+
+            .header-style14 {
+                position: fixed;
+                width: 100%;
+                z-index: 32767;
+            }
+        </style>
+         <!-- favicon -->
+         <link rel="shortcut icon" href="/images/icon/favicon.png">
+         <!-- animation -->
+         <link rel="stylesheet" href="/css/animate.css">
+         <!-- bootstrap -->
+         <link rel="stylesheet" href="/css/bootstrap.min.css">
+         <!-- font-awesome icon -->
+         <link rel="stylesheet" href="/css/font-awesome.min.css">
+         <!-- themify-icons -->
+         <link rel="stylesheet" href="/css/themify-icons.css">
+         <!-- owl carousel -->
+         <link rel="stylesheet" href="/css/owl.transitions.css">
+         <link rel="stylesheet" href="/css/owl.carousel.css"> 
+         <!-- magnific popup -->
+         <link rel="stylesheet" href="/css/magnific-popup.css"> 
+         <!-- base -->
+         <link rel="stylesheet" href="/css/base.css"> 
+         <!-- elements -->
+         <link rel="stylesheet" href="/css/elements.css">
+         <!-- responsive -->
+         <link rel="stylesheet" href="/css/responsive.css">
+         <!--[if IE]>
+             <script src="/js/html5shiv.min.js"></script>
+         <![endif]-->
+
+    <style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style>
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            var request1 = new XMLHttpRequest();
+            request1.open('GET', 'title', false);
+            request1.send();
+            if (request1.status == 200) {
+                document.getElementById('title').innerHTML = request1.responseText;
+            } else {
+                document.getElementById('title').innerHTML = '?';
+            }
+
+            var request2 = new XMLHttpRequest();
+            request2.open('GET', 'desc', false);
+            request2.send();
+            if (request2.status == 200) {
+                document.getElementById('desc').innerHTML = request2.responseText;
+            } else {
+                document.getElementById('desc').innerHTML = '?';
+            }
+        });
+     </script></head>
+    <body>
+
+        <div id="page" class="page"><header class="header-style14" id="header-section22">                
+            <nav class="navbar bg-black tz-header-bg no-margin shrink-header" style="border-color: rgb(112, 112, 112); background-color: rgb(0, 0, 0) !important;" id="ui-id-6">
+                <div class="container navigation-menu">
+                    <div class="row">
+                        <!-- logo -->
+                        <div class="col-md-3 col-sm-4 col-xs-7">
+                            <a href="/home" class="inner-link"><img alt="" src="/images/magirenko_logo.png" data-img-size="(W)163px X (H)40px" id="ui-id-8" style="border-radius: 0px; border-color: rgb(78, 78, 78); border-style: none; border-width: 1px !important;"></a>
+                        </div>
+                        <!-- end logo -->
+                        <!-- social elements -->
+                        <div class="col-md-9 col-sm-8 col-xs-5 position-inherit xs-no-padding-left">
+                            <div class="social float-right text-white">
+                                <a href="https://github.com/magirenko"><i class="fa tz-icon-color fa-github" id="ui-id-9" style="color: rgb(255, 255, 255); font-size: 25px; background-color: rgba(0, 0, 0, 0);"></i></a>
+                                <a href="https://x.com/magirenko"><i class="fa tz-icon-color fa-twitter" id="ui-id-10" style="color: rgb(255, 255, 255); font-size: 25px; background-color: rgba(0, 0, 0, 0);"></i></a>
+                                <a href="https://www.youtube.com/@Magirenko"><i class="fa tz-icon-color fa-youtube-play" id="ui-id-11" style="color: rgb(255, 255, 255); font-size: 25px; background-color: rgba(0, 0, 0, 0);"></i></a>
+                            </div>
+                        </div>
+                        <!-- end social elements -->
+                    </div>
+                </div>
+            </nav>                
+        </header><section class="padding-110px-tb xs-padding-60px-tb bg-dark-blue builder-bg border-none" id="title-section2" style="padding-left: 0px; padding-right: 0px; border-color: rgb(112, 112, 112); background-color: rgb(16, 16, 16) !important; padding-top: 250px !important; padding-bottom: 250px !important;">
+                <div class="container">
+                    <div class="row">
+                        <!-- section title -->
+                        <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                            <h2 class="section-title-large sm-section-title-medium text-white alt-font margin-five-bottom xs-margin-fifteen-bottom tz-text" style="color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0); font-weight: 500; text-transform: none; border-radius: 0px; font-size: 45px !important; font-family: &quot;Segoe Pro&quot; !important;" id="title">Cargando...</h2>
+                            <div class="text-blue-gray text-medium width-60 margin-lr-auto md-width-70 sm-width-100 tz-text" id="desc" style="background-color: rgba(0, 0, 0, 0); font-weight: 400; text-transform: none; text-align: left; border-radius: 0px; color: rgb(255, 255, 255) !important; font-size: 20px !important; font-family: &quot;Segoe Pro&quot; !important;">Cargando...</div>
+                            <h2 class="section-title-large sm-section-title-medium text-white alt-font margin-five-bottom xs-margin-fifteen-bottom tz-text" id="ui-id-48" style="background-color: rgba(0, 0, 0, 0); font-weight: 400; text-transform: none; border-radius: 0px; color: rgb(255, 255, 255) !important; font-size: 40px !important; font-family: &quot;Segoe Pro&quot; !important; margin-top: 150px">Descargar para Windows</h2>
+                            <a class="btn btn-large xs-btn-small bg-white text-dark-gray propClone no-margin-tb xs-margin-five-bottom" href="magirenko_music_x86.rar" id="tz-slider-lnk1" style="color:rgb(40, 40, 40);background-color:rgb(255, 255, 255);border-color:rgba(0, 0, 0, 0);font-size:13px;font-weight:500;font-family:Segoe Pro !important;text-transform:none;border-radius:4px;"><span class="tz-text" id="tz-slider-btn-text3">Descargar rar</span><i class="fa icon-extra-small tz-icon-color fa-angle-right" id="tz-icon-4"></i></a>
+                            <a class="btn btn-large xs-btn-small bg-white text-dark-gray propClone no-margin-tb xs-margin-five-bottom" href="magirenko_music_x86.7z" id="tz-slider-lnk1" style="color:rgb(40, 40, 40);background-color:rgb(255, 255, 255);border-color:rgba(0, 0, 0, 0);font-size:13px;font-weight:500;font-family:Segoe Pro !important;text-transform:none;border-radius:4px;"><span class="tz-text" id="tz-slider-btn-text3">Descargar 7z</span><i class="fa icon-extra-small tz-icon-color fa-angle-right" id="tz-icon-4"></i></a>
+                        </div>
+                        <!-- end section title -->
+                    </div>                    
+                
+            </div></section><footer id="footer-section12" class="bg-dark-blue builder-bg padding-60px-tb xs-padding-40px-tb footer-style4" style="padding-left: 0px; padding-right: 0px; border-color: rgb(112, 112, 112); background-color: rgb(31, 31, 31) !important; padding-top: 30px !important; padding-bottom: 30px !important;">
+                <div class="container">
+                    <div class="row equalize sm-equalize-auto">
+                        <!-- logo -->
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 sm-text-left xs-text-center sm-margin-eight-bottom xs-margin-nine-bottom display-table" style="height: 77px;">
+                            <div class="display-table-cell-vertical-middle">
+                                <a href="/home" class="inner-link"><img src="/images/magirenko_logo_64px.png" data-img-size="(W)163px X (H)40px" alt="" id="ui-id-12" style="border-radius: 0px; border-color: rgb(78, 78, 78); border-style: none; border-width: 1px !important;"></a>
+                            </div>
+                        </div>
+                        <!-- end logo -->
+                        <div class="col-lg-6 col-md-5 col-sm-6 col-xs-12 text-center sm-margin-eight-bottom xs-margin-nine-bottom xs-text-center display-table" style="height: 77px;">
+                            <div class="display-table-cell-vertical-middle">
+                                <span class="tz-text text-blue-gray" style="color: rgb(145, 148, 153); background-color: rgba(0, 0, 0, 0); font-weight: 400; text-transform: none; border-radius: 0px; font-size: 17px !important; font-family: &quot;Segoe Pro&quot; !important;" id="ui-id-7">© Magirenko Technologies 2023-2025</span>
+                            </div>
+                        </div>
+                        <!-- social elements -->
+                        <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 text-right sm-text-center display-table" style="height: 77px;">
+                            <div class="social icon-extra-small display-table-cell-vertical-middle">
+                                <a href="https://x.com/magirenko" class="margin-sixteen-right">
+                                    <i class="fa tz-icon-color text-white fa-twitter" id="ui-id-9" style="color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0); font-size: 25px !important;"></i>
+                                </a>
+                                <a href="https://github.com/magirenko" class="margin-sixteen-right">
+                                    <i class="fa tz-icon-color text-white fa-github" id="ui-id-7" style="color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0); font-size: 25px !important;"></i>
+                                </a>
+                                <a href="https://www.youtube.com/@Magirenko" class="margin-sixteen-right">
+                                    <i class="fa tz-icon-color text-white fa-youtube-play" id="ui-id-8" style="color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0); font-size: 25px !important;"></i>
+                                </a>
+                            </div>
+                        </div>                            
+                        <!-- end social elements -->
+                    </div>
+                </div>
+            </footer></div><!-- /#page -->
+
+
+        <!-- javascript libraries -->
+        <script type="text/javascript" src="/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/jquery.appear.js"></script>
+        <script type="text/javascript" src="/js/smooth-scroll.js"></script>
+        <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+        <!-- wow animation -->
+        <script type="text/javascript" src="/js/wow.min.js"></script>
+        <!-- owl carousel -->
+        <script type="text/javascript" src="/js/owl.carousel.min.js"></script>        
+        <!-- images loaded -->
+        <script type="text/javascript" src="/js/imagesloaded.pkgd.min.js"></script>
+        <!-- isotope -->
+        <script type="text/javascript" src="/js/jquery.isotope.min.js"></script> 
+        <!-- magnific popup -->
+        <script type="text/javascript" src="/js/jquery.magnific-popup.min.js"></script>
+        <!-- navigation -->
+        <script type="text/javascript" src="/js/jquery.nav.js"></script>
+        <!-- equalize -->
+        <script type="text/javascript" src="/js/equalize.min.js"></script>
+        <!-- fit videos -->
+        <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+        <!-- number counter -->
+        <script type="text/javascript" src="/js/jquery.countTo.js"></script>
+        <!-- time counter  -->
+        <script type="text/javascript" src="/js/counter.js"></script>
+        <!-- twitter Fetcher  -->
+        <script type="text/javascript" src="/js/twitterFetcher_min.js"></script>
+        <!-- main -->
+        <script type="text/javascript" src="/js/main.js"></script>
+    
+
+</body></html>
