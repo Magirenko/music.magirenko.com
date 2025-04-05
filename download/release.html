@@ -1,0 +1,177 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1">
+    <!-- title -->
+    <title>Descargar Magirenko Music</title>
+    <meta name="description" content="Descargar Magirenko Music">
+    <meta name="keywords" content="Magirenko Music, software, reproductor de musica">
+    <meta name="author" content="Magirenko">
+    <style>
+        .page {
+            padding: 0px;
+            background-color: black;
+            color: white;
+            font-size: 25px;
+        }
+
+        .header-style14 {
+            position: fixed;
+            width: 100%;
+            z-index: 32767;
+        }
+    </style>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="https://assets.magirenko.com/images/icon/favicon.png">
+    <!-- animation -->
+    <link rel="stylesheet" href="https://assets.magirenko.com/css/animate.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://assets.magirenko.com/css/bootstrap.min.css">
+    <!-- font-awesome icon -->
+    <link rel="stylesheet" href="https://assets.magirenko.com/css/font-awesome.min.css">
+    <!-- themify-icons -->
+    <link rel="stylesheet" href="https://assets.magirenko.com/css/themify-icons.css">
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="https://assets.magirenko.com/css/owl.transitions.css">
+    <link rel="stylesheet" href="https://assets.magirenko.com/css/owl.carousel.css">
+    <!-- magnific popup -->
+    <link rel="stylesheet" href="https://assets.magirenko.com/css/magnific-popup.css">
+    <!-- base -->
+    <link rel="stylesheet" href="https://assets.magirenko.com/css/base.css">
+    <!-- elements -->
+    <link rel="stylesheet" href="https://assets.magirenko.com/css/elements.css">
+    <!-- responsive -->
+    <link rel="stylesheet" href="https://assets.magirenko.com/css/responsive.css">
+    <!--[if IE]>
+         <script src="/js/html5shiv.min.js"></script>
+     <![endif]-->
+
+    <style id="fit-vids-style">
+        .fluid-width-video-wrapper {
+            width: 100%;
+            position: relative;
+            padding: 0;
+        }
+
+        .fluid-width-video-wrapper iframe,
+        .fluid-width-video-wrapper object,
+        .fluid-width-video-wrapper embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script id="PlaceTemplate" src="https://assets.magirenko.com/js/template.js" template="https://assets.magirenko.com/templates/release.html"></script>
+    <script id="header_and_footer" src="https://assets.magirenko.com/js/header_and_footer.js"></script>
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded", (event) => {
+        var dir = new URLSearchParams(window.location.search);
+        var type = "music/releases";
+        var dirurl = "https://data.magirenko.com/" + type + "/" + dir.get("id") + "/";
+        var exists;
+
+        var existencereq = new XMLHttpRequest();
+        existencereq.onreadystatechange = function() {
+            if (existencereq.readyState === existencereq.DONE) {
+                if (existencereq.status === 200) {
+                    exists = true;
+                } else {
+                    exists = false;
+                }
+            }
+        }
+        existencereq.open("HEAD", dirurl + "data.json", false);
+        existencereq.send();
+        if ((dir.get("id") != null) && exists == true) {
+
+            var title = document.getElementById("title");
+            var desc = document.getElementById("desc");
+            var creationdate = document.getElementById("creationdate");
+            var img = document.getElementById("img");
+
+            var req1 = new XMLHttpRequest();
+            req1.open("GET", dirurl + "data.json", false);
+            req1.send();
+
+            var datajson = JSON.parse(req1.responseText);
+            var platforms = datajson.data.platforms
+            var filename = datajson.data.filename
+
+            title.innerHTML = datajson.data.title;
+            desc.innerHTML = datajson.data.desc;
+            creationdate.innerHTML = "Creado en " + datajson.data.creationdate;
+            img.src = dirurl + "img.jpg";
+
+            platforms.forEach(element => {
+                switch (element.type) {
+                    case "Source":
+                        document.getElementById("sourcecode").style.display = "block";
+                        if (element.config.source == true) {
+                            document.getElementById("source").style.display = "block";
+                            document.getElementById("source").href = dirurl + filename + "_src" + ".zip";
+                        }
+                        break;
+                    case "Windows":
+                        document.getElementById("windowssection").style.display = "block";
+                        if (element.config.rar == true) {
+                            document.getElementById("rar").style.display = "block";
+                            document.getElementById("rar").href = dirurl + filename + "_win" + ".rar";
+                        }
+                        if (element.config.zip == true) {
+                            document.getElementById("zip").style.display = "block";
+                            document.getElementById("zip").href = dirurl + filename + "_win" + ".zip";
+                        }
+                        if (element.config.sevenzip == true) {
+                            document.getElementById("sevenzip").style.display = "block";
+                            document.getElementById("sevenzip").href = dirurl + filename + "_win" + ".7z";
+                        }
+                        if (element.config.installer == true) {
+                            document.getElementById("installer").style.display = "block";
+                            document.getElementById("installer").href = dirurl + filename + "_win" + ".exe";
+                        }
+                        break;
+                    case "Linux":
+                        document.getElementById("linuxsection").style.display = "block";
+                        if (element.config.targz == true) {
+                            document.getElementById("targz").style.display = "block";
+                            document.getElementById("targz").href = dirurl + filename + "_linux" + ".tar.gz";
+                        }
+                        if (element.config.tarxz == true) {
+                            document.getElementById("tarxz").style.display = "block";
+                            document.getElementById("tarxz").href = dirurl + filename + "_linux" + ".tar.xz";
+                        }
+                        if (element.config.tarsevenzip == true) {
+                            document.getElementById("tarsevenzip").style.display = "block";
+                            document.getElementById("tarsevenzip").href = dirurl + filename + "_linux" + ".tar.7z";
+                        }
+                        break;
+                    case "MacOS":
+                        document.getElementById("macossection").style.display = "block";
+                        if (element.config.macoszip == true) {
+                            document.getElementById("macoszip").style.display = "block";
+                            document.getElementById("macoszip").href = dirurl + filename + "_mac" + ".zip";
+                        }
+                        if (element.config.appinstaller == true) {
+                            document.getElementById("macosinstaller").style.display = "block";
+                            document.getElementById("macosinstaller").href = dirurl + filename + "_mac" + ".app";
+                        }
+                        break;
+                }
+            });
+        } else {
+            PlaceTemp("https://assets.magirenko.com/404.html");
+            placehf();
+        }
+    });
+</script>
+
+<body>
+    
+</body>
+
+</html>
