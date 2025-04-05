@@ -1,9 +1,0 @@
-Nueva actualizacion de Magirenko Music, la v0.1.1!<br>
-<br>
-Lista de cambios:<br>
-<br> -  Se cambio el nombre de MagicM Music a Magirenko Music: es por el cambio de nombre de nuestra empresa, tambien se reemplazaron todas las referencias de MagicM Music a Magirenko Music
-<br> - Se eliminaron los archivos "Magirenko Music.runtimeconfig.json" y "Magirenko Music.deps.json" por que eran inecesarios.
-<br> - Se cambio las optimizaciones de Compilacion de .NET a Debug.
-<br> - Se arreglo el bug donde no aparecia el caracter unicode "♫" (U+226B) en el icono de las musicas.
-<br>
-Nota: se recomienda descargar los archivos puestos en vez del codigo fuente, Los archivos colocados tienen cosas que faltan en el codigo fuente.
